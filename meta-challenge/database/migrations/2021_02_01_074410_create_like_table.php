@@ -16,11 +16,11 @@ class CreateLikeTable extends Migration
         Schema::create('like', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('status_id');
+            $table->unsignedBigInteger('story_id');
             $table->string('status', 5);
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('status_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('story_id')->references('id')->on('story')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

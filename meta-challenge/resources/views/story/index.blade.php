@@ -36,7 +36,7 @@
                             <div class="mt-2">
                                 <x-jet-label for="stories" />
                                 <x-jet-input id="stories" class="block mt-1 w-full" type="text" name="stories"
-                                    replacement="Tell your story" />
+                                    placeholder="Tell your story" />
                             </div>
 
                             <div class="mt-4">
@@ -52,6 +52,7 @@
             </div>
         </div>
     </form>
+
 
     @foreach ($story as $s)
         <div class="py-12">
@@ -86,14 +87,27 @@
                                         @endisset
                                     </td>
                                     <td>
-                                        <a id="tombol-hati" href="javascript:;"
+
+                                        {{-- <x-jet-label for="user_id" />
+                                        <x-jet-input id="user_id" class="block mt-1 w-full" type="text" name="user_id"
+                                            readonly value="{{ Auth::user()->id }}" />
+
+                                        <x-jet-label for="story_id" />
+                                        <x-jet-input id="story_id" class="block mt-1 w-full" type="text" name="story_id"
+                                            readonly value='{{ $s->story->id }}' />
+
+                                        <x-jet-label for="status" />
+                                        <x-jet-input id="status" class="block mt-1 w-full" type="text" name="status"
+                                            readonly value="{{ $s->status }}" /> --}}
+
+                                        <a class="tombol-hati" href="javascript:;"
                                             class="flex justify-center mt-4 sm:items-center sm:justify-between">
 
                                             <div class="text-center text-sm text-gray-500 sm:text-left">
                                                 <div class="flex items-center">
-                                                    <svg id='icon-hati' fill="none" stroke="currentColor"
-                                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        viewBox="0 0 24 24" class="-mt-px w-5 h-5 ">
+                                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                        class="-mt-px w-5 h-5 icon-hati ">
                                                         <path
                                                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
                                                         </path>
@@ -111,4 +125,5 @@
             </div>
         </div>
     @endforeach
+    </form>
 </x-app-layout>

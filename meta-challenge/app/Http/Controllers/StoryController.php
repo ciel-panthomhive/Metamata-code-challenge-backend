@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Like;
 use App\Models\Story;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class StoryController extends Controller
 {
     public function index()
     {
-        $users = User::all();
-        $story = Story::with(['users'])->get();
-        return view('story.index', ['story' => $story, 'users' => $users]);
+        //$users = User::all();
+        $story = Story::with(['users', 'like'])->get();
+        return view('story.index', ['story' => $story]);
         //return view('story.index', ['users' => $users]);
     }
 
@@ -21,6 +21,8 @@ class StoryController extends Controller
         $this->validate($request, [
             'user_id' => 'required',
             'stories' => 'required',
+            'story_id' => 'required',
+            'status' => 'required',
         ]);
 
         $story = Story::create([
@@ -28,13 +30,24 @@ class StoryController extends Controller
             'stories' => $request->stories,
         ]);
 
-        if ($story) {
+        $like = Like::create([
+            'user_id' => $request->user_id,
+            'story_id' => $request->story_id,
+            'status' => $request->status,
+        ]);
+
+        if ($story && $like) {
             return redirect()->route('story');
         }
     }
 
-    function like()
+    function like(Request $request)
     {
+        Like::updateOrCreate([
+            'user_id' => $request->user_id, 'story_id' => $request->story_id,
+            'status' => $request->status
+        ]);
+
         return redirect()->route('story');
     }
 }

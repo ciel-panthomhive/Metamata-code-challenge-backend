@@ -5,21 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Story extends Model
+class Like extends Model
 {
     use HasFactory;
 
-    protected $table = 'story';
+    public $timestamps = false;
+    protected $table = 'like';
 
-    protected $fillable = ['id', 'user_id', 'stories'];
+    protected $fillable = ['id', 'user_id', 'story_id', 'status'];
 
     public function users()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
-    public function like()
+    public function story()
     {
-        return $this->hasMany(Like::class, 'story_id', 'id');
+        return $this->belongsTo(Story::class, 'story_id', 'id');
     }
 }

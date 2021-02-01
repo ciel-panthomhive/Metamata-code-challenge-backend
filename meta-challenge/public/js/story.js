@@ -1,36 +1,38 @@
 $(document).ready(function () {
     var status;
 
-    $('#tombol-hati').on('click', '#icon-hati', function () {
+    $('.tombol-hati').on('click', '.icon-hati', function () {
 
-        $('#icon-hati').attr('fill', function (index, attr) {
+        $(this).attr('fill', function (index, attr) {
 
             return attr == 'none' ? 'red' : 'none';
 
         });
 
-        status = $('#icon-hati').attr('fill')
+        status = $(this).attr('fill')
         console.log(status);
+        $(this).toggleClass('text-red-400');
 
-        // $.ajaxSetup({
-        //     headers : {
-        //         'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-        //     }
-        // });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
-        // $.ajax({
-        //     type: 'POST',
-        //     url: 'url-nya',
-        //     data: status:status,
-        //     dataType: 'JSON',
-        //     success: function(data) {
+        $.ajax({
+            type: 'POST',
+            url: '/story/like',
+            data: { status: status },
+            dataType: 'JSON',
+            success: function (data) {
 
-        //     },
-        //     error: function(response) {
+            },
+            error: function (response) {
 
-        //     }
-        // });
+            }
+        });
 
-        $('#icon-hati').toggleClass('text-red-400');
+
     });
+
 })
