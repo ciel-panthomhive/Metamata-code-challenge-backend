@@ -15,7 +15,7 @@ Membuat media untuk berbagi cerita; website sederhana untuk membaca dan memposti
 ## Installation
 
 ```
-git clone https://github.com/arifblogger77/emergency-room.git
+git clone https://github.com/ciel-panthomhive/Metamata-code-challenge-backend.git
 ```
 
 ## Configuration
