@@ -24,4 +24,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //story
 Route::get('/story/index', 'App\Http\Controllers\StoryController@index')->name('story');
 Route::post('/story', 'App\Http\Controllers\StoryController@new')->name('story.add');
-Route::post('/story/like', 'App\Http\Controllers\StoryController@like');
+// Route::post('/story/like', 'App\Http\Controllers\StoryController@like');
+
+
+//mystory
+// Route::get('/mystory/{id}', 'App\Http\Controllers\MyStoryController@newMy')->name('mystory');

@@ -13,24 +13,24 @@ $(document).ready(function () {
         console.log(status);
         $(this).toggleClass('text-red-400');
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
 
-        $.ajax({
-            type: 'POST',
-            url: '/story/like',
-            data: { status: status },
-            dataType: 'JSON',
-            success: function (data) {
+        // $.ajax({
+        //     type: 'POST',
+        //     url: '/story/like',
+        //     data: { status: status },
+        //     dataType: 'JSON',
+        //     success: function (data) {
 
-            },
-            error: function (response) {
+        //     },
+        //     error: function (response) {
 
-            }
-        });
+        //     }
+        // });
 
 
     });

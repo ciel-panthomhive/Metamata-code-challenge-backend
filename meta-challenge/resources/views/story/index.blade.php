@@ -63,10 +63,6 @@
                             <div class="card-header text">
                                 <th>
                                     <tr>
-
-                                        {{-- @dd($users) --}}
-                                    <tr>
-
                                         <td>
                                             @isset($s->users)
                                                 {{ $s->users->name }}
@@ -78,7 +74,6 @@
                                 </th>
                             </div>
 
-
                             <div class="card-body">
                                 <tr>
                                     <td>
@@ -89,16 +84,12 @@
                                     <td>
 
                                         {{-- <x-jet-label for="user_id" />
-                                        <x-jet-input id="user_id" class="block mt-1 w-full" type="text" name="user_id"
+                                        <x-jet-input id="user_id" class="block mt-1 w-full" type="hidden" name="user_id"
                                             readonly value="{{ Auth::user()->id }}" />
 
                                         <x-jet-label for="story_id" />
-                                        <x-jet-input id="story_id" class="block mt-1 w-full" type="text" name="story_id"
-                                            readonly value='{{ $s->story->id }}' />
-
-                                        <x-jet-label for="status" />
-                                        <x-jet-input id="status" class="block mt-1 w-full" type="text" name="status"
-                                            readonly value="{{ $s->status }}" /> --}}
+                                        <x-jet-input id="story_id" class="block mt-1 w-full" type="hidden" name="story_id"
+                                            readonly value='{{ $s->story->id }}' /> --}}
 
                                         <a class="tombol-hati" href="javascript:;"
                                             class="flex justify-center mt-4 sm:items-center sm:justify-between">

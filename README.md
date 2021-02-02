@@ -2,20 +2,50 @@
 
 Membuat media untuk berbagi cerita; website sederhana untuk membaca dan memposting cerita;
 
-## Spesifikasi
-- User harus login terlebih dahulu untuk masuk ke website
-- User yang sudah login bisa memposting cerita
-- User yang sudah login bisa membaca cerita milik sendiri ataupun dari user lainnya
-- User yang sudah login bisa meng-klik tombol suka
+---
 
-## Kebutuhan Sistem
-- PHP dengan Framework Laravel 8
-- MySQL Database
-- Git Version Control
-- Composer
+## Prerequisite
 
-## Pengumpulan
-- Fork Repository ini untuk mulai mengerjakan
-- Tambahkan cara instalasi/run di README.md. Jika website di deploy maka tambahkan link pada README.md
-- WhatsApp ke [Qorthony](https://wa.me/08872402827) jika sudah selesai atau ada yang ingin ditanyakan
-- Batas Pengumpulan sebelum waktu interview 
+1. XAMPP php >= 7.3 [Download](https://www.apachefriends.org/index.html)
+2. Postgre SQL >= 12 [Download](https://www.postgresql.org)
+3. Node JS [Download](https://nodejs.org/en)
+4. Composer [Download](https://getcomposer.org/download)
+5. Git [Download](https://git-scm.com/downloads)
+
+## Installation
+
+```
+git clone https://github.com/arifblogger77/emergency-room.git
+```
+
+## Configuration
+
+### Laravel
+1. Open Project Emergency Room
+- Setup Installation
+    1. Open Metamata-code-challenge-backend
+    2. Open meta-challenge
+    3. Run `composer install`
+    4. Run `npm install`
+    5. Run `npm run dev`
+
+- Setup Environtment
+    1. Duplicate `.env.example`
+    2. Rename to `.env`
+    3. Run `php artisan key:generate`
+    4. Setup `.env`
+        ```env
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=5432
+        DB_DATABASE=yourdatabase
+        DB_USERNAME=yourusername
+        DB_PASSWORD=yourpassword
+        ```
+        > Don't forget to create database in MySQL
+
+- Setup Project
+    1. Open terminal with path the project
+    2. Run `php artisan migrate`
+    3. Run `php artisan serve`
+    4. Open the url
