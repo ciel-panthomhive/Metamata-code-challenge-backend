@@ -4,14 +4,6 @@ Membuat media untuk berbagi cerita; website sederhana untuk membaca dan memposti
 
 ---
 
-## Prerequisite
-
-1. XAMPP php >= 7.3 [Download](https://www.apachefriends.org/index.html)
-2. Postgre SQL >= 12 [Download](https://www.postgresql.org)
-3. Node JS [Download](https://nodejs.org/en)
-4. Composer [Download](https://getcomposer.org/download)
-5. Git [Download](https://git-scm.com/downloads)
-
 ## Installation
 
 ```
@@ -20,14 +12,12 @@ git clone https://github.com/ciel-panthomhive/Metamata-code-challenge-backend.gi
 
 ## Configuration
 
-### Laravel
-1. Open Project Emergency Room
+1. Open Project Metamata-code-challenge-backend
 - Setup Installation
-    1. Open Metamata-code-challenge-backend
-    2. Open meta-challenge
-    3. Run `composer install`
-    4. Run `npm install`
-    5. Run `npm run dev`
+    1. Open meta-challenge
+    2. Run `composer install`
+    3. Run `npm install`
+    4. Run `npm run dev`
 
 - Setup Environtment
     1. Duplicate `.env.example`
@@ -37,7 +27,7 @@ git clone https://github.com/ciel-panthomhive/Metamata-code-challenge-backend.gi
         ```env
         DB_CONNECTION=mysql
         DB_HOST=127.0.0.1
-        DB_PORT=5432
+        DB_PORT=3306
         DB_DATABASE=yourdatabase
         DB_USERNAME=yourusername
         DB_PASSWORD=yourpassword
